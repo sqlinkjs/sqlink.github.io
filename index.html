@@ -6,46 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQLink</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
 </head>
 
 <body>
 
-
-
     <div class="app-container">
         <div class="flex flex-col items-center justify-center">
-            <img src="./logo.png" height="150px" width="150px"/>
-            <p class="text-3xl text-white">
-                Introducing <span style="color: #fcc84a;">SQLink</span>
+            <img src="./images/logo.png" height="120px" width="120px" />
+            <p class="text-3xl m-5">
+                Introducing <span style="color: #cf7c2e;">SQLink</span>
+            </p>
+            <p class="text-xl text-gray-500">
+                Instantly query your MySQL database with inbuilt APIs
             </p>
         </div>
         <div class="flex flex-row gap-5 m-10">
-            <div class=" h-[60vh] w-2/4">
-                <p>Hello</p>
+            <div class="h-[60vh] w-2/4 shadow-xl" style="background-color: #f1f3f4;">
+                <p class="text-xl font-semibold p-4 text-gray-500 m-2">Get started by installing the package via npm</p>
+
+                <div class="m-2">
+                    <p class="ui header">Sources</p>
+                    <div class="flex flex-row gap-2">
+                        <div>
+                            <a  href="https://github.com/Santhoshlm10/SQLink" target="_blank">
+                            <button class="ui default button">
+                                <span class="flex flex-row gap-3 items-center">
+                                    <img src="./images/github.png" width="16" height="16" />
+                                    <p>Github</p>
+                                </span>
+                            </button>
+                        </a>
+                        </div>
+                        <div>
+                            <a href="https://www.npmjs.com/package/sqlink" target="_blank">
+
+                            <button class="ui default button">
+                                <span class="flex flex-row gap-3 items-center">
+                                    <img src="./images/npm.png" width="16" height="16" />
+                                    <p>NPM</p>
+                                </span>
+                            </button>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://sqlinkjs.github.io/docs/docs.html" target="_blank">
+
+                            <button class="ui default button">
+                                <span class="flex flex-row gap-3 items-center">
+                                    <img src="./images/document.png" width="16" height="16" />
+                                    <p>Documentation</p>
+                                </span>
+                            </button>
+                            </a>
+
+                        </div>
+                        <div>
+                            <a href="https://github.com/Santhoshlm10/SQLink/issues" target="_blank">
+
+                            <button class="ui default button">
+                                <span class="flex flex-row gap-3 items-center">
+                                    <img src="./images/bug.png" width="16" height="16" />
+                                    <p>Issues</p>
+                                </span>
+                            </button>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="h-[60vh] w-2/4">
                 <div class="terminal-container">
                     <div class="terminal-header">
-                      <span class="red"></span>
-                      <span class="yellow"></span>
-                      <span class="green"></span>
+                        <span class="red"></span>
+                        <span class="yellow"></span>
+                        <span class="green"></span>
                     </div>
                     <div class="terminal-body">
-                      <pre><code id="terminal-content"></code></pre>
+                        <pre><code id="terminal-content"></code></pre>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
 </body>
 
 </html>
