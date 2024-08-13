@@ -72,7 +72,6 @@ body{
   font-family: 'Courier New', Courier, monospace;
   color: #00ff00;
   padding: 20px;
-  margin: 0 auto;
 }
 
 .terminal-header {
@@ -117,25 +116,6 @@ code {
   word-wrap: break-word;
 }
 
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-#terminal-content::after {
-  content: '_';
-  animation: blink 1s step-start infinite;
-}
 
 
 img.beluga-gif {

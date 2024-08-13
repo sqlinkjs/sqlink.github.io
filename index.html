@@ -24,7 +24,7 @@
         <div class="app-container">
             <div class="logo-container">
                 <img class="app-logo" src="./images/logo.png" />
-                <p class="app-title">Introducing SQLink</p>
+                <p class="app-title">Introducing <span class="text-blue-600">SQLink</span></p>
                 <p class="app-description">Instantly query your MySQL database with inbuilt APIs</p>
             </div>
             <div class="command-container">
@@ -86,10 +86,17 @@
     </main>
     <footer>
         <img class="beluga-gif" src="./images/beluga.gif" width="100%" height={200} />
+        <div class="p-5 flex flex-row justify-center">
+            <p id="footer-text"></p>
+            <p class="text-blue-600">&nbsp;Santhosh Kashyap</p>
+        </div>
     </footer>
     <script src="./js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-
+    <script>
+        let ft = document.getElementById("footer-text")
+        ft.innerText = `©${new Date().getFullYear()} /  `
+    </script>
 </body>
 
 </html>

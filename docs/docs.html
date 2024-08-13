@@ -45,6 +45,7 @@
 
     .tab button.active {
       background-color: #dddcdc;
+      font-weight: 600;
     }
 
     .tabcontent {
@@ -52,6 +53,7 @@
       padding: 0px 12px;
       width: 80%;
       border-left: none;
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -80,32 +82,84 @@
         </button>
       </div>
     </div>
+    <div class="mt-2 mb-1 text-gray-700">
+      <p>Welcome to SQLink documentation, browse the latest APIs and code samples</p>
+    </div>
   </header>
+  <hr class="mb-2 border bg-gray-700" />
   <div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'getting-started')" id="defaultOpen">Getting Started</button>
-    <button class="tablinks" onclick="openCity(event, 'configuration')">Configuration</button>
-    <button class="tablinks" onclick="openCity(event, 'select-query')">Reading Data</button>
-    <button class="tablinks" onclick="openCity(event, 'read-query')">Inserting Data</button>
-    <button class="tablinks" onclick="openCity(event, 'update-query')">Updating Data</button>
-    <button class="tablinks" onclick="openCity(event, 'delete-query')">Deleting Data</button>
-    <button class="tablinks" onclick="openCity(event, 'procedures')">Procedures</button>
-    <button class="tablinks" onclick="openCity(event, 'updating-package')">Updating Package</button>
-    <button class="tablinks" onclick="openCity(event, 'issues')">Issues</button>
+    <button id="introduction_tab" class="tablinks" onclick="openModule(event, 'introduction')">Introduction</button>
+    <button id="getting-started_tab" class="tablinks" onclick="openModule(event, 'getting-started')">Getting
+      Started</button>
+    <button id="configuration_tab" class="tablinks" onclick="openModule(event, 'configuration')">Configuration</button>
+    <button id="select-query_tab" class="tablinks" onclick="openModule(event, 'select-query')">Reading Data</button>
+    <button id="read-query_tab" class="tablinks" onclick="openModule(event, 'read-query')">Inserting Data</button>
+    <button id="update-query_tab" class="tablinks" onclick="openModule(event, 'update-query')">Updating Data</button>
+    <button id="delete-query_tab" class="tablinks" onclick="openModule(event, 'delete-query')">Deleting Data</button>
+    <button id="procedures_tab" class="tablinks" onclick="openModule(event, 'procedures')">Procedures</button>
+    <button id="updating-package_tab" class="tablinks" onclick="openModule(event, 'updating-package')">Updating
+      Package</button>
+    <button id="todo-app_tab" class="tablinks" onclick="openModule(event, 'todo-app')">Todo App
+
+      <span
+        class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Sample
+        Project</span>
+
+    </button>
+  </div>
+
+
+  <div id="introduction" class="tabcontent">
+
+    <p class="text-3xl my-5 font-semibold text-gray-800">Introduction</p>
+
+    <div class="mx-4">
+      <p class="my-5 text-gray-800"><b>SQLink</b> is a free and open-source Node.js library designed to simplify
+        database
+        interactions by providing
+        ready-to-use APIs for MySQL. With SQLink, developers can easily perform essential database operations such as
+        reading data (GET), creating new entries (POST), updating existing records (PUT), and deleting data (DELETE)
+        without having to manually code these functionalities.
+      </p>
+
+      <p class="my-5 text-gray-800">Additionally, SQLink offers built-in support for executing stored procedures,
+        allowing you
+        to pass arguments and handle more complex database logic seamlessly.
+      </p>
+
+
+      <p class="my-5 text-gray-800">
+        This library significantly reduces the time and effort required during the development process, particularly for
+        those who want to focus on front-end development or need to quickly prototype their applications. Whether you're
+        working on a personal project, learning new skills, or building a prototype, SQLink provides a robust solution
+        that accelerates development by handling the backend for you.
+      </p>
+    </div>
+  </div>
   </div>
 
   <div id="getting-started" class="tabcontent">
-    <h3>London</h3>
-    <p>London is the capital city of England.</p>
+    <p class="text-3xl my-5 font-semibold text-gray-800">Getting Started</p>
+    <div class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300"
+      role="alert">
+      <span class="font-medium">Before Getting Started</span> Please make sure you have <a class="underline"
+        href="https://www.mysql.com/downloads/" target="_blank">MySQL</a> and <a class="underline"
+        href="https://nodejs.org/en/download/package-manager" target="_blank">Node JS</a> installed on your machine
+    </div>
+    <div class="mx-4">
+
+    </div>
+
   </div>
 
   <div id="configuration" class="tabcontent">
-    <h3>Paris</h3>
-    <p>Paris is the capital of France.</p>
+    <p class="text-3xl my-5 font-semibold text-gray-800">Configuration</p>
+
   </div>
 
   <div id="select-query" class="tabcontent">
-    <h3>Tokyo</h3>
-    <p>Tokyo is the capital of Japan.</p>
+    <p class="text-3xl my-5 font-semibold text-gray-800">Reading Data</p>
+
   </div>
 
   <div id="read-query" class="tabcontent">
@@ -125,22 +179,83 @@
   </div>
 
   <div id="procedures" class="tabcontent">
-    <h3>Tokyo</h3>
-    <p>Tokyo is the capital of Japan.</p>
+    <p class="text-3xl my-5 font-semibold text-gray-800">Procedures</p>
+
+    <div class="mx-4">
+
+      <div>
+        <p class="my-5 text-gray-800">
+          MySQL procedures are a powerful feature that allows you to encapsulate a sequence of SQL statements into a single unit that can be executed repeatedly with different inputs. Stored procedures are often used to streamline and automate repetitive database tasks, enforce business logic, and enhance the security of database operations
+        </p>
+      </div>
+    </div>
+
   </div>
 
   <div id="updating-package" class="tabcontent">
-    <h3>Tokyo</h3>
-    <p>Tokyo is the capital of Japan.</p>
+    <p class="text-3xl my-5 font-semibold text-gray-800">Updating Package</p>
+
+    <div class="mx-4">
+
+      <div>
+        <p class="my-5 text-gray-800">
+          To update the sqlink package, open your terminal and type the following command
+        </p>
+        <div class="terminal-container">
+          <div class="terminal-header">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+          </div>
+          <div class="terminal-body">
+            <pre><code id="terminal-content">$ sqlink update</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="my-5 text-gray-800">
+          After executing the command, please wait a few seconds for the package to update. You should then be able to
+          see the results. </p>
+        <div class="terminal-container">
+          <div class="terminal-header">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+          </div>
+          <div class="terminal-body">
+            <pre><code id="terminal-content">$ sqlink update<br/>Package updated successfully!!</code></pre>
+          </div>
+        </div>
+      </div>
+
+
+      <div>
+        <p class="my-5 text-gray-800">
+          You can verify if the installed package is the latest version
+        </p>
+        <div class="terminal-container">
+          <div class="terminal-header">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+          </div>
+          <div class="terminal-body">
+            <pre><code id="terminal-content">$ sqlink --version<br/>1.0.7</code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
-  <div id="issues" class="tabcontent">
-    <h3>Tokyo</h3>
-    <p>Tokyo is the capital of Japan.</p>
+  <div id="todo-app" class="tabcontent">
+    <p class="text-3xl my-5 font-semibold text-gray-800">Todo App</p>
   </div>
   </div>
 
   <script>
-    function openCity(evt, cityName) {
+    function openModule(evt, moduleName) {
       var i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName("tabcontent");
       for (i = 0; i < tabcontent.length; i++) {
@@ -150,10 +265,10 @@
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
       }
-      document.getElementById(cityName).style.display = "block";
+      document.getElementById(moduleName).style.display = "block";
       evt.currentTarget.className += " active";
     }
-    document.getElementById("defaultOpen").click();
+    document.getElementById("introduction_tab").click();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 </body>
