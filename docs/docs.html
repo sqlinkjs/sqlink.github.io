@@ -88,39 +88,6 @@
       flex-direction: column;
     }
 
-    header .flex {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    header .flex-row {
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    @media (min-width: 768px) {
-      header {
-        flex-direction: row;
-      }
-
-      header .flex {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      header .flex-row {
-        flex-direction: row;
-        align-items: center;
-      }
-
-      header .flex-row .flex {
-        flex-direction: row;
-      }
-    }
-
     img {
       max-width: 100%;
       height: auto;
@@ -175,19 +142,12 @@
       Started</button>
     <button id="configuration_tab" class="tablinks" onclick="openModule(event, 'configuration')">Configuration</button>
     <button id="select-query_tab" class="tablinks" onclick="openModule(event, 'select-query')">Reading Data</button>
-    <button id="read-query_tab" class="tablinks" onclick="openModule(event, 'read-query')">Inserting Data</button>
+    <button id="insert-query_tab" class="tablinks" onclick="openModule(event, 'insert-query')">Inserting Data</button>
     <button id="update-query_tab" class="tablinks" onclick="openModule(event, 'update-query')">Updating Data</button>
     <button id="delete-query_tab" class="tablinks" onclick="openModule(event, 'delete-query')">Deleting Data</button>
     <button id="procedures_tab" class="tablinks" onclick="openModule(event, 'procedures')">Procedures</button>
     <button id="updating-package_tab" class="tablinks" onclick="openModule(event, 'updating-package')">Updating
       Package</button>
-    <!-- <button id="todo-app_tab" class="tablinks" onclick="openModule(event, 'todo-app')">Todo App
-
-      <span
-        class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Sample
-        Project</span>
-
-    </button> -->
   </div>
 
 
@@ -224,12 +184,90 @@
     <p class="text-3xl my-5 font-semibold text-gray-800">Getting Started</p>
     <div class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300"
       role="alert">
-      <span class="font-medium">Before Getting Started</span> Please make sure you have <a class="underline"
+      <span class="font-bold">IMPORTANT </span><br/>Before Getting Started Please make sure you have <a class="underline"
         href="https://www.mysql.com/downloads/" target="_blank">MySQL</a> and <a class="underline"
         href="https://nodejs.org/en/download/package-manager" target="_blank">Node JS</a> installed on your machine
     </div>
     <div class="mx-4">
+      <p class="my-4">Open your terminal and enter the following command to install sqlink</p>
+      <div class="terminal-container">
+        <div class="terminal-header">
+          <span class="red"></span>
+          <span class="yellow"></span>
+          <span class="green"></span>
+        </div>
+        <div class="terminal-body">
+          <pre><code id="terminal-content-install">$ npm install -g sqlink</code></pre>
+        </div>
+      </div>
+    </div>
+    <div class="mx-4">
+      <p class="my-4">Once you install the package successfully, verify it by using the command as shown below</p>
+      <div class="terminal-container">
+        <div class="terminal-header">
+          <span class="red"></span>
+          <span class="yellow"></span>
+          <span class="green"></span>
+        </div>
+        <div class="terminal-body">
+          <pre><code id="terminal-content-install">$ sqlink --version<br/>1.0.8</code></pre>
+        </div>
+      </div>
+    </div>
 
+    <div class="mx-4">
+      <p class="my-4 font-semibold text-xl text-gray-700">Command line options</p>
+      <p class="my-4">Type <b>sqlink -h</b> to see the available options.</p>
+      <div class="terminal-container">
+        <div class="terminal-header">
+          <span class="red"></span>
+          <span class="yellow"></span>
+          <span class="green"></span>
+        </div>
+        <div class="terminal-body">
+          <pre><code id="terminal-content-install">$ sqlink -h<br/>Usage: sqlink [options]<br/><br/>SQLink is a Node.js library that turns MySQL tables into RESTful APIs with procedure execution and full CRUD support.<br/><br/>Options:<br/> -V, --version  output the version number<br/> run            runs the sqlink program<br/> update         updates the library<br/> config         updates mysql configuration from CLI<br/> -h, --help     display help for command</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-4">
+      <p class="my-4 font-semibold text-xl text-gray-700">Running the program</p>
+      <p class="my-4">Type <b>sqlink run</b> to run the program.</p>
+      <div class="terminal-container">
+        <div class="terminal-header">
+          <span class="red"></span>
+          <span class="yellow"></span>
+          <span class="green"></span>
+        </div>
+        <div class="terminal-body">
+          <pre><code id="terminal-content-install">$ sqlink run<br/>
+  ____     ___    _       _           _    
+ / ___|   / _ \  | |     (_)  _ __   | | __
+ \___ \  | | | | | |     | | | '_ \  | |/ /
+    _) | | |_| | | |___  | | | | | | |   < 
+ |____/   \__\_\ |_____| |_| |_| |_| |_|\_\
+
+                   1.0.8
+           
+Reading configuration file from ./properties.json
+MySQL connection completed with user root
+Server is running on http://172.20.10.4:3001
+  
+          </code></pre>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="mx-4">
+      <p class="my-4 font-semibold text-xl text-gray-700">Sending Request to SQLink</p>
+      <p class="my-2">Once sqlink program is started succesfully, you can start to query the data using postman or any
+        other REST API tools</p>
+      <p class="my-2">For any request recevied from the client there will be a log printed in the console and also for
+        the response sent from sqlink. a sample screenshot is attached below</p>
+      <img src="./../images/sqlink_log.png" width="auto" height="auto" />
     </div>
 
   </div>
@@ -250,7 +288,7 @@
             <span class="green"></span>
           </div>
           <div class="terminal-body">
-            <pre><code id="terminal-content">$ sqlink cofig</code></pre>
+            <pre><code id="terminal-content">$ sqlink config</code></pre>
           </div>
         </div>
       </div>
@@ -284,12 +322,159 @@
 
   <div id="select-query" class="tabcontent">
     <p class="text-3xl my-5 font-semibold text-gray-800">Reading Data</p>
+    <div class="mx-4">
+      <div>
+        <p class="my-5 text-gray-800">
+          In MySQL, reading data involves retrieving records from a table. This process allows you to access and view the stored information, often filtering or sorting the data to meet specific requirements.
+        </p>
+      </div>
 
+
+
+
+
+
+
+
+
+      <div>
+        <p class="my-4 text-xl font-medium text-gray-800">
+          Usage
+        </p>
+        <div>
+          <div class="my-2 flex flex-row gap-2 items-center">
+            <p>URL: </p>
+            <pre
+              class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/table/<span class="font-bold">table_name</span>/read(<span class="font-bold">...options</span>)</code></pre>
+          </div>
+          <div class="my-2 flex flex-col gap-2">
+            <p>Options </p>
+            <ul>
+              <li><span class="font-semibold">$select:</span>&nbsp;selects all the columns in a mysql table(*) or you can query based on column names as well</li>
+            </ul>
+          </div>
+          <div class="my-2 flex flex-row gap-2">
+            <p>Method </p>
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">GET</span>
+          </div>
+          <div class="my-2 flex flex-row gap-2">
+            <p>Response: </p>
+            <span
+              class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">200
+              OK</span>Response
+          </div>
+        </div>
+
+
+
+        <p class="my-4 text-xl font-medium text-gray-800">
+          Example
+        </p>
+        <p class="text-sm">All parameters</p>
+        <div class="my-2 flex flex-row gap-2 items-center">
+          <p>URL: </p>
+          <pre
+            class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/table/<span class="font-bold">users</span>/read<span class="font-bold">?$select=*</span></code></pre>
+        </div>
+        <p class="text-sm">Selected parameters</p>
+        <div class="my-2 flex flex-row gap-2 items-center">
+          <p>URL: </p>
+          <pre
+            class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/table/<span class="font-bold">users</span>/read<span class="font-bold">?$select=username,useremail,city</span></code></pre>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
   </div>
 
-  <div id="read-query" class="tabcontent">
-    <h3>Tokyo</h3>
-    <p>Tokyo is the capital of Japan.</p>
+  <div id="insert-query" class="tabcontent">
+    <p class="text-3xl my-5 font-semibold text-gray-800">Inserting Data</p>
+
+    <div class="mx-4">
+      <div>
+        <p class="my-5 text-gray-800">
+          In MySQL, inserting data refers to adding new records into a table. This process populates the table with
+          fresh entries, each containing specific values for the defined columns.
+        </p>
+      </div>
+      <div>
+        <p class="my-4 text-xl font-medium text-gray-800">
+          Usage
+        </p>
+        <div>
+          <div class="my-2 flex flex-row gap-2 items-center">
+            <p>URL: </p>
+            <pre
+              class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/table/<span class="font-bold">table_name</span>/create</code></pre>
+          </div>
+          <div class="my-2 flex flex-row gap-2">
+            <p>Method </p>
+            <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">POST</span>
+          </div>
+          <div class="my-2 flex flex-col gap-2">
+            <p>Payload </p>
+            <pre><code>{
+  column1: "value1",
+  column2: "value2",
+  column3: "value3",
+  column4: "value4"
+}</code>
+            </pre>
+          </div>
+          <div class="my-2 flex flex-row gap-2">
+            <p>Response: </p>
+            <span
+              class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">200
+              OK</span>Response
+          </div>
+        </div>
+
+        
+        <div class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300"
+        role="alert">
+        <span class="font-bold">IMPORTANT </span><br/>Please make sure the key name in your payload matches the column of mysql table to avoid errors
+      </div>
+
+        <p class="my-4 text-xl font-medium text-gray-800">
+          Example
+        </p>
+        <div>
+          <div class="my-2 flex flex-row gap-2 items-center">
+            <p>URL: </p>
+            <pre
+              class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/table/<span class="font-bold">table_name</span>/create</code></pre>
+          </div>
+        </div>
+        <div class="my-2 flex flex-col gap-2">
+          <p>Payload </p>
+          <pre><code>{
+  username: "John Doe",
+  useremail: "johndoe@email.com",
+  city: "Bangalore",
+}</code>
+          </pre>
+        </div>
+
+
+        <p class="my-3 text-gray-800">
+          This API will insert a record in <b>users</b> table
+        </p>
+
+
+      </div>
+    </div>
   </div>
 
   <div id="update-query" class="tabcontent">
@@ -303,34 +488,66 @@
         </p>
       </div>
       <div>
-        <p class="text-xl font-medium text-gray-800">
+        <p class="my-4 text-xl font-medium text-gray-800">
           Usage
         </p>
-        <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-          role="alert">
-          http://localhost:3000/table/<span class="font-bold">table_name</span>/<span
-            class="font-bold">update(update_key,update_value)</span>
+        <div>
+          <div class="my-2 flex flex-row gap-2 items-center">
+            <p>URL: </p>
+            <pre
+              class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/table/<span class="font-bold">table_name</span>/update(<span class="font-bold">update_key</span>,<span class="font-bold">update_value</span>)</code></pre>
+          </div>
+          <div class="my-2 flex flex-col gap-2">
+            <p>Parameters </p>
+            <ul>
+              <li><span class="font-semibold">update_key:</span>&nbsp;reference to the column on which data has to be
+                updated</li>
+              <li><span class="font-semibold">update_value:</span>&nbsp;value of that record</li>
+            </ul>
+          </div>
+          <div class="my-2 flex flex-row gap-2">
+            <p>Method </p>
+            <span
+              class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">PUT</span>
+          </div>
+          <div class="my-2 flex flex-col gap-2">
+            <p>Payload </p>
+            <pre><code>{
+  column1: "updated_value1",
+  column2: "updated_value2"
+}</code>
+            </pre>
+          </div>
+          <div class="my-2 flex flex-row gap-2">
+            <p>Response: </p>
+            <span
+              class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">200
+              OK</span>Response
+          </div>
         </div>
-        <ul class="max-w space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
-          <li>
-            <b>table_name: </b>provide your table name here
-          </li>
-          <li>
-            <b>delete_key: </b>delete key
-          </li>
-          <li>
-            <b>delete_value: </b>delete value
-          </li>
-        </ul>
+
 
 
         <p class="my-4 text-xl font-medium text-gray-800">
           Example
         </p>
-        <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-          role="alert">
-          http://localhost:3000/table/<span class="font-bold">users</span>/<span class="font-bold">delete(id,10)</span>
+        <div>
+          <div class="my-2 flex flex-row gap-2 items-center">
+            <p>URL: </p>
+            <pre
+              class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/table/<span class="font-bold">users</span>/update(<span class="font-bold">user_id</span>,<span class="font-bold">10</span>)</code></pre>
+          </div>
         </div>
+        <div class="my-2 flex flex-col gap-2">
+          <p>Payload </p>
+          <pre><code>{
+  username: "John Doe",
+}</code>
+          </pre>
+        </div>
+        <p class="my-3 text-gray-800">
+          This API will update the record with <b>username</b> as <b>John Doe</b> where <b>user_id</b> is <b>10</b>
+        </p>
 
       </div>
     </div>
@@ -347,43 +564,57 @@
           specific rows of data from a database table, reducing the dataset by eliminating unwanted or obsolete entries.
         </p>
       </div>
+
+
       <div>
-        <p class="text-xl font-medium text-gray-800">
+        <p class="my-4 text-xl font-medium text-gray-800">
           Usage
         </p>
-        <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-          role="alert">
-          http://localhost:3000/table/<span class="font-bold">table_name</span>/<span
-            class="font-bold">delete(delete_key,delete_value)</span>
+        <div>
+          <div class="my-2 flex flex-row gap-2 items-center">
+            <p>URL: </p>
+            <pre
+              class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/table/<span class="font-bold">table_name</span>/delete(<span class="font-bold">delete_key</span>,<span class="font-bold">delete_value</span>)</code></pre>
+          </div>
+          <div class="my-2 flex flex-col gap-2">
+            <p>Parameters: </p>
+            <ul>
+              <li><span class="font-semibold">delete_key:</span>&nbsp;reference to the column on which data has to be
+                deleted</li>
+              <li><span class="font-semibold">delete_value:</span>&nbsp;value of that record</li>
+
+            </ul>
+          </div>
+          <div class="my-2 flex flex-row gap-2">
+            <p>Method: </p>
+            <span
+              class="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300">DELETE</span>
+          </div>
+          <div class="my-2 flex flex-row gap-2">
+            <p>Response: </p>
+            <span
+              class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">200
+              OK</span>Response
+          </div>
         </div>
-        <ul class="max-w space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
-          <li>
-            <b>table_name: </b>provide your table name here
-          </li>
-          <li>
-            <b>delete_key: </b>delete key
-          </li>
-          <li>
-            <b>delete_value: </b>delete value
-          </li>
-        </ul>
+
 
 
         <p class="my-4 text-xl font-medium text-gray-800">
           Example
         </p>
-        <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-          role="alert">
-          http://localhost:3000/table/<span class="font-bold">users</span>/<span class="font-bold">delete(id,10)</span>
+        <div>
+          <div class="my-2 flex flex-row gap-2 items-center">
+            <p>URL: </p>
+            <pre
+              class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/table/<span class="font-bold">users</span>/delete(<span class="font-bold">user_id</span>,<span class="font-bold">10</span>)</code></pre>
+          </div>
         </div>
-
+        <p class="my-3 text-gray-800">
+          The URL shown above will select a record from <b>users</b> table where <b>user_id</b> is equal to <b>10</b>
+        </p>
 
       </div>
-
-
-
-
-
 
 
     </div>
@@ -408,54 +639,57 @@
         </div>
 
         <div>
-          <p class="text-xl font-medium text-gray-800">
+          <p class="my-4 text-xl font-medium text-gray-800">
             Usage
           </p>
-          <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-            role="alert">
-            http://localhost:3000/procedure/<span class="font-bold">procedure_name</span>
+          <div>
+            <div class="my-2 flex flex-row gap-2 items-center">
+              <p>URL: </p>
+              <pre
+                class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/procedure/<span class="font-bold">procedure_name</span></code></pre>
+            </div>
+            <div class="my-2 flex flex-row gap-2">
+              <p>Method: </p>
+              <span
+                class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">GET</span>
+            </div>
+            <div class="my-2 flex flex-row gap-2">
+              <p>Response: </p>
+              <span
+                class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">200
+                OK</span>Response
+            </div>
           </div>
-          <ul class="max-w space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
-            <li>
-              <b>procedure_name: </b>provide your procedure name here
-            </li>
-          </ul>
 
 
-          <p class="my-4 text-xl font-medium text-gray-800">
-            Example
-          </p>
-          <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-            role="alert">
-            http://localhost:3000/procedure/<span class="font-bold">topFiveUsers()</span>
-          </div>
-
-          <p class="text-xl font-medium text-gray-800">
-            Usage with params
-          </p>
-          <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-            role="alert">
-            http://localhost:3000/procedure/<span class="font-bold">procedure_name(argument1,argument2)</span>
-          </div>
-          <ul class="max-w space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
-            <li>
-              <b>procedure_name: </b>provide your procedure name here
-            </li>
-            <li>
-              <b>argument1: </b>value for argument 1
-            </li>
-            <li>
-              <b>argument2: </b>value for argument 2
-            </li>
-          </ul>
 
           <p class="my-4 text-xl font-medium text-gray-800">
             Example
           </p>
-          <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-            role="alert">
-            http://localhost:3000/procedure/<span class="font-bold">topFiveUsers('Male')</span>
+          <div>
+            <div class="my-2 flex flex-row gap-2 items-center">
+              <p>URL: </p>
+              <pre
+                class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/procedure/<span class="font-bold">topFiveUsers()</span></code></pre>
+            </div>
           </div>
+
+
+          <p class="my-4 text-xl font-medium text-gray-800">
+            Example with params
+          </p>
+          <div>
+            <div class="my-2 flex flex-row gap-2 items-center">
+              <p>URL: </p>
+              <pre
+                class="m-1 p-2 bg-gray-200"><code>http://localhost:3000/procedure/<span class="font-bold">topFiveUsers('Male')</span></code></pre>
+            </div>
+          </div>
+
+          <p class="my-3 text-gray-800">
+            The arguments for procedure depends on the number of arguments that the procedure takes which is decided
+            when creating a procedure
+          </p>
         </div>
       </div>
     </div>
@@ -519,9 +753,6 @@
     </div>
 
   </div>
-  <div id="todo-app" class="tabcontent">
-    <p class="text-3xl my-5 font-semibold text-gray-800">Todo App</p>
-  </div>
   </div>
 
   <script>
@@ -538,7 +769,8 @@
       document.getElementById(moduleName).style.display = "block";
       evt.currentTarget.className += " active";
     }
-    document.getElementById("update-query_tab").click();
+    document.getElementById("select-query_tab").click();
+    document.getElementById('terminal-content-install').textContent = navigator.platform.toLowerCase().startsWith("win") ? "npm install -g sqlink" : "$ sudo npm install -g sqlink"
   </script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 </body>
