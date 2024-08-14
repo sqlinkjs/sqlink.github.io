@@ -23,6 +23,8 @@
       border: 1px solid #ccc;
       background-color: #f1f1f1;
       width: 20%;
+      display: flex;
+      flex-direction: column;
     }
 
     .tab button {
@@ -55,7 +57,87 @@
       border-left: none;
       margin-bottom: 20px;
     }
+
+    /* Responsive layout adjustments */
+    @media (max-width: 768px) {
+      .tab {
+        width: 100%;
+        float: none;
+      }
+
+      .tabcontent {
+        width: 100%;
+        float: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tab button {
+        padding: 10px 6px;
+        font-size: 12px;
+      }
+
+      .tabcontent {
+        padding: 0px 8px;
+      }
+    }
+
+    /* Flexbox for header and buttons */
+    header {
+      display: flex;
+      flex-direction: column;
+    }
+
+    header .flex {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    header .flex-row {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+      }
+
+      header .flex {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      header .flex-row {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      header .flex-row .flex {
+        flex-direction: row;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    button a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    button img {
+      width: 20px;
+      height: auto;
+    }
   </style>
+
 </head>
 
 <body class="docs-container">
@@ -155,6 +237,49 @@
   <div id="configuration" class="tabcontent">
     <p class="text-3xl my-5 font-semibold text-gray-800">Configuration</p>
 
+    <div class="mx-4">
+
+      <div>
+        <p class="my-5 text-gray-800">
+          To update the configuration of sqlink package, type the following command in your terminal
+        </p>
+        <div class="terminal-container">
+          <div class="terminal-header">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+          </div>
+          <div class="terminal-body">
+            <pre><code id="terminal-content">$ sqlink cofig</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="my-5 text-gray-800">
+          After executing the command, you will be prompted a input few details regarding MySQL and server port. </p>
+        <div class="terminal-container">
+          <div class="terminal-header">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+          </div>
+          <div class="terminal-body">
+            <pre><code id="terminal-content">$ sqlink config<br/><span class="text-blue-400">Please provide your MySQL configuration for connection</span><br/><span>? Enter your MySQL host: <span class="text-gray-400">(localhost)</span></span><br/><span>? Enter your MySQL user: <span class="text-gray-400">(root)</span></span><br/><span>? Enter your MySQL password: <span class="text-gray-400">***********</span></span><br/><span>? Enter Database name:<span class="text-gray-400">(your database name)</span></span><br/><span>? Enter the port where app needs to be hosted: <span class="text-gray-400">(3001)</span></span></code></pre>
+          </div>
+        </div>
+      </div>
+
+
+      <div>
+        <p class="my-5 text-gray-800">
+          Once you enter the valid details and hit enter, next time you run <b>sqlink run</b>, the configuration will be
+          applied
+        </p>
+      </div>
+
+    </div>
+
   </div>
 
   <div id="select-query" class="tabcontent">
@@ -168,30 +293,169 @@
   </div>
 
   <div id="update-query" class="tabcontent">
-    <h3>Tokyo</h3>
-    <p>Tokyo is the capital of Japan.</p>
+    <p class="text-3xl my-5 font-semibold text-gray-800">Updating Data</p>
+
+    <div class="mx-4">
+      <div>
+        <p class="my-5 text-gray-800">
+          In MySQL, updating data involves modifying existing records in a table. The update process allows you to
+          change the values of specific fields within rows to reflect new information or correct inaccuracies.
+        </p>
+      </div>
+      <div>
+        <p class="text-xl font-medium text-gray-800">
+          Usage
+        </p>
+        <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+          role="alert">
+          http://localhost:3000/table/<span class="font-bold">table_name</span>/<span
+            class="font-bold">update(update_key,update_value)</span>
+        </div>
+        <ul class="max-w space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+          <li>
+            <b>table_name: </b>provide your table name here
+          </li>
+          <li>
+            <b>delete_key: </b>delete key
+          </li>
+          <li>
+            <b>delete_value: </b>delete value
+          </li>
+        </ul>
+
+
+        <p class="my-4 text-xl font-medium text-gray-800">
+          Example
+        </p>
+        <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+          role="alert">
+          http://localhost:3000/table/<span class="font-bold">users</span>/<span class="font-bold">delete(id,10)</span>
+        </div>
+
+      </div>
+    </div>
   </div>
 
 
   <div id="delete-query" class="tabcontent">
-    <h3>Tokyo</h3>
-    <p>Tokyo is the capital of Japan.</p>
+    <p class="text-3xl my-5 font-semibold text-gray-800">Deleting Data</p>
+
+    <div class="mx-4">
+      <div>
+        <p class="my-5 text-gray-800">
+          In MySQL, data is deleted by removing records from a table. Deletion is a process that permanently erases
+          specific rows of data from a database table, reducing the dataset by eliminating unwanted or obsolete entries.
+        </p>
+      </div>
+      <div>
+        <p class="text-xl font-medium text-gray-800">
+          Usage
+        </p>
+        <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+          role="alert">
+          http://localhost:3000/table/<span class="font-bold">table_name</span>/<span
+            class="font-bold">delete(delete_key,delete_value)</span>
+        </div>
+        <ul class="max-w space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+          <li>
+            <b>table_name: </b>provide your table name here
+          </li>
+          <li>
+            <b>delete_key: </b>delete key
+          </li>
+          <li>
+            <b>delete_value: </b>delete value
+          </li>
+        </ul>
+
+
+        <p class="my-4 text-xl font-medium text-gray-800">
+          Example
+        </p>
+        <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+          role="alert">
+          http://localhost:3000/table/<span class="font-bold">users</span>/<span class="font-bold">delete(id,10)</span>
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
   </div>
 
   <div id="procedures" class="tabcontent">
     <p class="text-3xl my-5 font-semibold text-gray-800">Procedures</p>
 
     <div class="mx-4">
-
       <div>
         <p class="my-5 text-gray-800">
-          MySQL procedures are a powerful feature that allows you to encapsulate a sequence of SQL statements into a single unit that can be executed repeatedly with different inputs. Stored procedures are often used to streamline and automate repetitive database tasks, enforce business logic, and enhance the security of database operations
+          MySQL procedures are a powerful feature that allows you to encapsulate a sequence of SQL statements into a
+          single unit that can be executed repeatedly with different inputs. Stored procedures are often used to
+          streamline and automate repetitive database tasks, enforce business logic, and enhance the security of
+          database operations
         </p>
-        <p class="text-xl font-medium text-gray-800">
-          Usage
-        </p>
+        <div class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300"
+          role="alert">
+          Learn about procedures and how to create it from <a
+            href="https://www.w3schools.com/sql/sql_stored_procedures.asp" target="_blank"><span
+              class="underline font-medium">click here</span></a>
+        </div>
+
         <div>
-          <p class="text-sm">http://localhost:3000/procedure/{procedureName}</p>
+          <p class="text-xl font-medium text-gray-800">
+            Usage
+          </p>
+          <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+            role="alert">
+            http://localhost:3000/procedure/<span class="font-bold">procedure_name</span>
+          </div>
+          <ul class="max-w space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+            <li>
+              <b>procedure_name: </b>provide your procedure name here
+            </li>
+          </ul>
+
+
+          <p class="my-4 text-xl font-medium text-gray-800">
+            Example
+          </p>
+          <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+            role="alert">
+            http://localhost:3000/procedure/<span class="font-bold">topFiveUsers()</span>
+          </div>
+
+          <p class="text-xl font-medium text-gray-800">
+            Usage with params
+          </p>
+          <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+            role="alert">
+            http://localhost:3000/procedure/<span class="font-bold">procedure_name(argument1,argument2)</span>
+          </div>
+          <ul class="max-w space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+            <li>
+              <b>procedure_name: </b>provide your procedure name here
+            </li>
+            <li>
+              <b>argument1: </b>value for argument 1
+            </li>
+            <li>
+              <b>argument2: </b>value for argument 2
+            </li>
+          </ul>
+
+          <p class="my-4 text-xl font-medium text-gray-800">
+            Example
+          </p>
+          <div class="my-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+            role="alert">
+            http://localhost:3000/procedure/<span class="font-bold">topFiveUsers('Male')</span>
+          </div>
         </div>
       </div>
     </div>
@@ -230,7 +494,7 @@
             <span class="green"></span>
           </div>
           <div class="terminal-body">
-            <pre><code id="terminal-content">$ sqlink update<br/>Package updated successfully!!</code></pre>
+            <pre><code id="terminal-content">$ sqlink update<br/><span class="text-green-400">Package updated successfully!!</span></code></pre>
           </div>
         </div>
       </div>
@@ -274,7 +538,7 @@
       document.getElementById(moduleName).style.display = "block";
       evt.currentTarget.className += " active";
     }
-    document.getElementById("introduction_tab").click();
+    document.getElementById("update-query_tab").click();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 </body>
