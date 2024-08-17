@@ -58,11 +58,18 @@
       margin-bottom: 20px;
     }
 
+    .tab-dd{
+        display: none;
+      }
     /* Responsive layout adjustments */
     @media (max-width: 768px) {
       .tab {
         width: 100%;
         float: none;
+        display: none;
+      }
+      .tab-dd{
+        display: contents;
       }
 
       .tabcontent {
@@ -163,6 +170,23 @@
     <button id="procedures_tab" class="tablinks" onclick="openModule(event, 'procedures')">Procedures</button>
     <button id="updating-package_tab" class="tablinks" onclick="openModule(event, 'updating-package')">Updating
       Package</button>
+  </div>
+  <div class="tab-dd">
+    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contents</label>
+    <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      onchange="handleSelectChange(this)">
+      <option selected value="introduction">Introduction</option>
+      <option value="getting-started">Getting Started</option>
+      <option value="configuration">Configuration</option>
+      <option value="select-query">Reading Data</option>
+      <option value="insert-query">Inserting Data</option>
+      <option value="update-query">Updating Data</option>
+      <option value="delete-query">Deleting Data</option>
+      <option value="procedures">Procedures</option>
+      <option value="updating-package">Updating Package</option>
+
+
+    </select>
   </div>
 
 
@@ -788,6 +812,9 @@ Server is running on http://172.20.10.4:3001
       }
       document.getElementById(moduleName).style.display = "block";
       evt.currentTarget.className += " active";
+    }
+    const handleSelectChange = (data) => {
+      openModule(null,data.value)
     }
     document.getElementById("introduction_tab").click();
     document.getElementById('terminal-content-install').textContent = navigator.platform.toLowerCase().startsWith("win") ? "> npm install -g sqlink" : "$ sudo npm install -g sqlink"
