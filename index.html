@@ -23,6 +23,9 @@
     <main>
         <div class="app-container">
             <div class="logo-container">
+                <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                    <span class="font-medium">v1.2.2</span> is released now, <a target="_blank" href="/docs/version/1.1.2.html" class="underline">Click here</a> to read the docs and check what's new.
+                  </div>
                 <img class="app-logo" src="./images/logo.png" />
                 <p class="app-title">Introducing <span class="text-blue-600">SQLink</span></p>
                 <p class="app-description">Instantly query your MySQL database with inbuilt APIs</p>
@@ -69,14 +72,16 @@
                 </button>
                 <button type="button"
                     class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                    <a href="https://github.com/Santhoshlm10/SQLink" target="_blank" class="text-center flex flex-row gap-2">
+                    <a href="https://github.com/Santhoshlm10/SQLink" target="_blank"
+                        class="text-center flex flex-row gap-2">
                         <img src="./images/github.png" width="20" height="10">
                         <span>Github</span>
                     </a>
                 </button>
                 <button type="button"
                     class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                    <a href="https://www.npmjs.com/package/sqlink" target="_blank" class="text-center flex flex-row gap-2">
+                    <a href="https://www.npmjs.com/package/sqlink" target="_blank"
+                        class="text-center flex flex-row gap-2">
                         <img src="./images/npm.png" width="20" height="10">
                         <span>npm</span>
                     </a>
@@ -86,30 +91,55 @@
                 <section class="bg-white dark:bg-gray-900">
                     <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                         <div class="max-w mb-8 lg:mb-16">
-                            <p class="text-center mb-4 text-2xl tracking-tight font-extrabold text-gray-900 dark:text-white">Key Features</p>
+                            <p
+                                class="text-center mb-4 text-2xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                                Key Features</p>
                         </div>
                         <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
                             <div class="bg-gray-100 p-5 border rounded-lg">
-                                <div class="bg-gray-300 flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-120q-151 0-255.5-46.5T120-280v-400q0-66 105.5-113T480-840q149 0 254.5 47T840-680v400q0 67-104.5 113.5T480-120Zm0-479q89 0 179-25.5T760-679q-11-29-100.5-55T480-760q-91 0-178.5 25.5T200-679q14 30 101.5 55T480-599Zm0 199q42 0 81-4t74.5-11.5q35.5-7.5 67-18.5t57.5-25v-120q-26 14-57.5 25t-67 18.5Q600-528 561-524t-81 4q-42 0-82-4t-75.5-11.5Q287-543 256-554t-56-25v120q25 14 56 25t66.5 18.5Q358-408 398-404t82 4Zm0 200q46 0 93.5-7t87.5-18.5q40-11.5 67-26t32-29.5v-98q-26 14-57.5 25t-67 18.5Q600-328 561-324t-81 4q-42 0-82-4t-75.5-11.5Q287-343 256-354t-56-25v99q5 15 31.5 29t66.5 25.5q40 11.5 88 18.5t94 7Z"/></svg>                                </div>
+                                <div
+                                    class="bg-gray-300 flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#5f6368">
+                                        <path
+                                            d="M480-120q-151 0-255.5-46.5T120-280v-400q0-66 105.5-113T480-840q149 0 254.5 47T840-680v400q0 67-104.5 113.5T480-120Zm0-479q89 0 179-25.5T760-679q-11-29-100.5-55T480-760q-91 0-178.5 25.5T200-679q14 30 101.5 55T480-599Zm0 199q42 0 81-4t74.5-11.5q35.5-7.5 67-18.5t57.5-25v-120q-26 14-57.5 25t-67 18.5Q600-528 561-524t-81 4q-42 0-82-4t-75.5-11.5Q287-543 256-554t-56-25v120q25 14 56 25t66.5 18.5Q358-408 398-404t82 4Zm0 200q46 0 93.5-7t87.5-18.5q40-11.5 67-26t32-29.5v-98q-26 14-57.5 25t-67 18.5Q600-328 561-324t-81 4q-42 0-82-4t-75.5-11.5Q287-343 256-354t-56-25v99q5 15 31.5 29t66.5 25.5q40 11.5 88 18.5t94 7Z" />
+                                    </svg>
+                                </div>
                                 <h3 class="mb-2 text-xl font-bold dark:text-white">SQL-like Syntax</h3>
-                                <p class="text-gray-500 dark:text-gray-400">SQLink allows developers to use SQL-like syntax for querying data, which can be more intuitive for those familiar with SQL.</p>
+                                <p class="text-gray-500 dark:text-gray-400">SQLink allows developers to use SQL-like
+                                    syntax for querying data, which can be more intuitive for those familiar with SQL.
+                                </p>
                             </div>
                             <div class="bg-gray-100 p-5 border rounded-lg">
-                                <div class="bg-gray-300 flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/></svg>                                </div>
+                                <div
+                                    class="bg-gray-300 flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#5f6368">
+                                        <path
+                                            d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z" />
+                                    </svg>
+                                </div>
                                 <h3 class="mb-2 text-xl font-bold dark:text-white">JavaScript Integration</h3>
-                                <p class="text-gray-500 dark:text-gray-400">Being a JavaScript library, it integrates seamlessly with web applications, making it suitable for both front-end and back-end development.</p>
+                                <p class="text-gray-500 dark:text-gray-400">Being a JavaScript library, it integrates
+                                    seamlessly with web applications, making it suitable for both front-end and back-end
+                                    development.</p>
                             </div>
                             <div class="bg-gray-100 p-5 border rounded-lg">
-                                <div class="bg-gray-300 flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-160q-56 0-105.5-17.5T284-227l-56 55q-11 11-28 11t-28-11q-11-11-11-28t11-28l55-55q-32-41-49.5-91T160-480q0-134 93-227t227-93h320v320q0 134-93 227t-227 93Zm0-80q100 0 170-70t70-170v-240H480q-100 0-170 70t-70 170q0 39 12 74.5t33 64.5l207-207q11-11 28-11t28 11q12 12 12 28.5T548-491L341-284q29 21 64.5 32.5T480-240Zm0-240Z"/></svg>                                </div>
+                                <div
+                                    class="bg-gray-300 flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#5f6368">
+                                        <path
+                                            d="M480-160q-56 0-105.5-17.5T284-227l-56 55q-11 11-28 11t-28-11q-11-11-11-28t11-28l55-55q-32-41-49.5-91T160-480q0-134 93-227t227-93h320v320q0 134-93 227t-227 93Zm0-80q100 0 170-70t70-170v-240H480q-100 0-170 70t-70 170q0 39 12 74.5t33 64.5l207-207q11-11 28-11t28 11q12 12 12 28.5T548-491L341-284q29 21 64.5 32.5T480-240Zm0-240Z" />
+                                    </svg>
+                                </div>
                                 <h3 class="mb-2 text-xl font-bold dark:text-white">Lightweight</h3>
-                                <p class="text-gray-500 dark:text-gray-400">The library is designed to be lightweight, which is beneficial for performance-sensitive applications.</p>
+                                <p class="text-gray-500 dark:text-gray-400">The library is designed to be lightweight,
+                                    which is beneficial for performance-sensitive applications.</p>
                             </div>
                         </div>
                     </div>
-                  </section>
+                </section>
             </div>
         </div>
     </main>
